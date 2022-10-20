@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IconButton, Stack, TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-const Searcher = () => {
+const Searcher = (props) => {
+  const { setInputUser } = props;
+  const [valueInput, setValueInput] = useState('');
+
+  const onSearchValueChange = (event) => {
+    const inputValue = event.target.value;
+    setValueInput(inputValue);
+  };
+
+  const handleSubmit = () => {
+    setInputUser(valueInput);
+  };
+
   return (
     <Stack
       direction="row"
@@ -18,10 +30,12 @@ const Searcher = () => {
         color="secondary"
         size="small"
         fullWidth={true}
+        value={valueInput}
+        onChange={onSearchValueChange}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
-              <IconButton>
+              <IconButton onClick={handleSubmit}>
                 <SearchIcon />
               </IconButton>
             </InputAdornment>
