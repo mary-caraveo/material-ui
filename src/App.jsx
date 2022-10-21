@@ -10,11 +10,23 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async (user) => {
       const userResponse = await getUser(user);
-      console.log(userResponse);
+      try {
+        if (userState === 'octocat') {
+          localStorage.setItem('octocat', JSON.stringify(userResponse));
+        }
+        if (userResponse.message === 'Not found') {
+          const octocat = localStorage.getItem('octocat');
+          setInputUser(JSON.parse(octocat));
+        }
+        setUserState(userResponse);
+      } catch (error) {
+        setUserState(userResponse);
+      }
     };
 
     fetchUser(inputUser);
-  }, []);
+  }, [inputUser]);
+  console.log(userState);
 
   return (
     <Container
