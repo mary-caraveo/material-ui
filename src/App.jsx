@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container } from '@mui/material';
 import { getUser } from './services/users';
 import Searcher from './components/Searcher';
+import UserCard from './containers/UserCard';
 
 const App = () => {
   const [inputUser, setInputUser] = useState('octocat');
@@ -26,7 +27,6 @@ const App = () => {
 
     fetchUser(inputUser);
   }, [inputUser]);
-  console.log(userState);
 
   return (
     <Container
@@ -44,6 +44,7 @@ const App = () => {
         marginTop: '50px',
       }}>
       <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+      <UserCard userState={userState} />
     </Container>
   );
 };
