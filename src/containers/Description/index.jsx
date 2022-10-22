@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack, Typography } from '@mui/material';
+import PaperInformation from '../../components/PaperInformation';
 
 const Description = (props) => {
   const { userState } = props;
@@ -19,6 +20,7 @@ const Description = (props) => {
           </Typography>
         )}
       </Stack>
+      <PaperInformation userState={userState} />
     </>
   );
 };
