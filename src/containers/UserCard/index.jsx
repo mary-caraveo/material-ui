@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardMedia, Grid } from '@mui/material';
+import { Grid, Avatar, Stack } from '@mui/material';
 import MainInformation from '../../components/MainInformation';
 import Description from '../Description';
 
@@ -8,14 +8,24 @@ const UserCard = (props) => {
   const { avatar_url } = userState;
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{ marginTop: '15px' }}>
       <Grid item xs={3}>
-        <CardMedia component="img" alt="GitHub User" image={avatar_url} />
+        <Avatar
+          alt="GitHub User"
+          src={avatar_url}
+          sx={{
+            width: '100%',
+            height: 'auto',
+            marginLeft: '5px',
+          }}
+        />
       </Grid>
       <Grid item xs={9}>
-        <MainInformation userState={userState} />
+        <Stack direction="column" spacing={1} sx={{ margin: '30px' }}>
+          <MainInformation userState={userState} />
+          <Description userState={userState} />
+        </Stack>
       </Grid>
-      <Description userState={userState} />
     </Grid>
   );
 };
