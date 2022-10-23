@@ -9,16 +9,11 @@ const Description = (props) => {
 
   return (
     <>
-      <Stack>
+      <Stack sx={{ justifyContent: 'center' }}>
         {bio !== null ? (
-          <Typography>{bio}</Typography>
+          <Typography variant="body1">{bio}</Typography>
         ) : (
-          <Typography>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure illo
-            illum eligendi, quia aperiam alias, sed unde necessitatibus repellat
-            ratione incidunt repellendus earum aliquid! Voluptas officia
-            perferendis expedita veniam laborum!
-          </Typography>
+          <Typography variant="body1">Not Available</Typography>
         )}
       </Stack>
       <PaperInformation userState={userState} />
