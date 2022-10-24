@@ -34,14 +34,15 @@ const App = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        background: 'rgba(144, 19, 254, 0.5)',
+        background: '#22272d',
         boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
         backdropFilter: 'blur(4px)',
         border: '1px solid rgba(255, 255, 255, 0.18)',
-        width: '80vw',
-        height: '500px',
+        width: { xs: '100%', md: '80vw' },
+        height: { xs: '100%', md: '80vh', lg: '500px' },
         borderRadius: '16px',
-        marginTop: '50px',
+        marginTop: { xs: '0', md: '30px', lg: '40px' },
+        paddingBottom: { xs: '1rem', sm: '3rem', lg: '0' },
       }}>
       <Searcher inputUser={inputUser} setInputUser={setInputUser} />
       <UserCard userState={userState} />

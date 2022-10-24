@@ -7,11 +7,16 @@ const MainInformation = (props) => {
 
   return (
     <>
-      <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
+      <Stack
+        direction={{ xs: 'column', lg: 'row' }}
+        color={'white'}
+        sx={{ justifyContent: 'space-between' }}>
         <Typography variant="h4">{name}</Typography>
         <Typography variant="subtitle2">{created_at}</Typography>
       </Stack>
-      <Typography variant="caption">{`@${login}`}</Typography>
+      <Typography
+        variant="caption"
+        sx={{ color: 'white' }}>{`@${login}`}</Typography>
     </>
   );
 };

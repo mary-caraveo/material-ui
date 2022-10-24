@@ -10,35 +10,31 @@ const LocationInformation = (props) => {
   const { location, twitter_username, blog, company } = userState;
 
   return (
-    <Grid
-      container={true}
-      spacing={2}
-      sx={{ marginTop: '15px', color: 'white' }}>
-      <Grid item={true} xs={6}>
+    <Grid container spacing={2} sx={{ marginTop: '15px', color: 'white' }}>
+      <Grid item xs={12} lg={6}>
         <Stack direction="row" spacing={2}>
-          <LocationOnIcon />
+          <LocationOnIcon sx={{ color: '#E0144C' }} />
           <Typography>{location ? location : 'Not Available'}</Typography>
         </Stack>
       </Grid>
-      <Grid item={true} xs={6}>
+      <Grid item xs={12} lg={6}>
         <Stack direction="row" spacing={2}>
-          <TwitterIcon />
+          <TwitterIcon sx={{ color: '#1DA1F2' }} />
           <Typography>
             {twitter_username ? twitter_username : 'Not Available'}
           </Typography>
         </Stack>
       </Grid>
-      <Grid item={true} xs={6}>
+      <Grid item xs={12} lg={6}>
         <Stack direction="row" spacing={2}>
-          <LanguageIcon />
+          <LanguageIcon sx={{ color: '#2a74f5' }} />
           <Typography>
             {blog ? (
               <Link
                 target="_blank"
                 rel="noreferrer"
                 underline="hover"
-                href={blog}
-                sx={{ color: 'blue' }}>
+                href={blog}>
                 {blog}
               </Link>
             ) : (
@@ -47,9 +43,9 @@ const LocationInformation = (props) => {
           </Typography>
         </Stack>
       </Grid>
-      <Grid item={true} xs={6}>
+      <Grid item xs={12} lg={6}>
         <Stack direction="row" spacing={2}>
-          <BusinessIcon />
+          <BusinessIcon sx={{ color: '#939598' }} />
           <Typography>{company ? company : 'Not Available'}</Typography>
         </Stack>
       </Grid>

@@ -9,7 +9,7 @@ const Description = (props) => {
 
   return (
     <>
-      <Stack sx={{ justifyContent: 'center' }}>
+      <Stack sx={{ justifyContent: 'center', color: 'white' }}>
         {bio !== null ? (
           <Typography variant="body1">{bio}</Typography>
         ) : (
