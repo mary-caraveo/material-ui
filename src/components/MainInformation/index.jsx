@@ -17,14 +17,16 @@ const MainInformation = (props) => {
         color={'white'}
         sx={{ justifyContent: 'space-between' }}
       >
-        <Typography variant="h4">{name}</Typography>
-        <Typography variant="subtitle2">
+        <Typography variant="h4" sx={{ paddingLeft: '14px' }}>
+          {name}
+        </Typography>
+        <Typography variant="subtitle2" sx={{ paddingLeft: { sx: '14px' } }}>
           {new Date(created_at).toLocaleDateString('en-us')}
         </Typography>
       </Stack>
       <Typography
         variant="caption"
-        sx={{ color: 'white' }}
+        sx={{ color: 'white', paddingLeft: '14px' }}
       >{`@${login}`}</Typography>
     </>
   );

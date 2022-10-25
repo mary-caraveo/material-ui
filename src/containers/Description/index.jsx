@@ -11,9 +11,13 @@ const Description = (props) => {
     <>
       <Stack sx={{ justifyContent: 'center', color: 'white' }}>
         {bio !== null ? (
-          <Typography variant="body1">{bio}</Typography>
+          <Typography variant="body1" sx={{ paddingLeft: '14px' }}>
+            {bio}
+          </Typography>
         ) : (
-          <Typography variant="body1">Not Available</Typography>
+          <Typography variant="body1" sx={{ paddingLeft: '14px' }}>
+            Not Available
+          </Typography>
         )}
       </Stack>
       <PaperInformation userState={userState} />
