@@ -11,13 +11,13 @@ const LocationInformation = (props) => {
 
   return (
     <Grid container spacing={2} sx={{ marginTop: '15px', color: 'white' }}>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} sm={6} md={6} lg={6}>
         <Stack direction="row" spacing={2}>
           <LocationOnIcon sx={{ color: '#E0144C' }} />
           <Typography>{location ? location : 'Not Available'}</Typography>
         </Stack>
       </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} sm={6} md={6} lg={6}>
         <Stack direction="row" spacing={2}>
           <TwitterIcon sx={{ color: '#1DA1F2' }} />
           <Typography>
@@ -25,7 +25,7 @@ const LocationInformation = (props) => {
           </Typography>
         </Stack>
       </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} sm={6} md={6} lg={6}>
         <Stack direction="row" spacing={2}>
           <LanguageIcon sx={{ color: '#2a74f5' }} />
           <Typography>
@@ -43,7 +43,7 @@ const LocationInformation = (props) => {
           </Typography>
         </Stack>
       </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} sm={6} md={6} lg={6}>
         <Stack direction="row" spacing={2}>
           <BusinessIcon sx={{ color: '#939598' }} />
           <Typography>{company ? company : 'Not Available'}</Typography>

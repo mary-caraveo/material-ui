@@ -8,9 +8,15 @@ const MainInformation = (props) => {
   return (
     <>
       <Stack
-        direction={{ xs: 'column', lg: 'row' }}
+        direction={{
+          xs: 'column',
+          sm: 'row',
+          md: 'row',
+          lg: 'row',
+        }}
         color={'white'}
-        sx={{ justifyContent: 'space-between' }}>
+        sx={{ justifyContent: 'space-between' }}
+      >
         <Typography variant="h4">{name}</Typography>
         <Typography variant="subtitle2">
           {new Date(created_at).toLocaleDateString('en-us')}
@@ -18,7 +24,8 @@ const MainInformation = (props) => {
       </Stack>
       <Typography
         variant="caption"
-        sx={{ color: 'white' }}>{`@${login}`}</Typography>
+        sx={{ color: 'white' }}
+      >{`@${login}`}</Typography>
     </>
   );
 };
