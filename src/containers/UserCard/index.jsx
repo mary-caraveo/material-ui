@@ -9,13 +9,21 @@ const UserCard = (props) => {
 
   return (
     <Grid container spacing={2} sx={{ marginTop: '15px' }}>
-      <Grid item xs={12} md={5} lg={3}>
+      <Grid
+        item
+        xs={12}
+        md={5}
+        lg={3}
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}>
         <Avatar
           alt="GitHub User"
           src={avatar_url}
           sx={{
             width: { xs: '35%', md: '75%', lg: '100%' },
-            height: 'auto',
+            height: 'fit-content',
             marginLeft: '5px',
           }}
         />
