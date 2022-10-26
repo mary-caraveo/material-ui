@@ -21,18 +21,23 @@ const Searcher = (props) => {
       sx={{
         marginTop: '30px',
         width: '80%',
-      }}>
+        backgroundColor: 'white',
+        borderRadius: '10px',
+        padding: '6px',
+      }}
+    >
       <TextField
         id="outlined-basic"
         label="GitHub User"
         placeholder="Octocat"
         variant="outlined"
-        color="secondary"
+        color="primary"
         size="small"
         fullWidth={true}
         value={valueInput}
         onChange={onSearchValueChange}
         InputProps={{
+          style: { paddingRight: '0' },
           endAdornment: (
             <InputAdornment position="start">
               <IconButton onClick={handleSubmit}>
