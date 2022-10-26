@@ -8,35 +8,51 @@ const UserCard = (props) => {
   const { avatar_url } = userState;
 
   return (
-    <Grid container spacing={2} sx={{ marginTop: '15px' }}>
-      <Grid
-        item
-        xs={12}
-        md={5}
-        lg={3}
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}>
-        <Avatar
-          alt="GitHub User"
-          src={avatar_url}
+    <Grid
+      container
+      spacing={1}
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        paddingTop: { xs: '40px', md: '10px', lg: '40px' },
+      }}
+    >
+      <Stack
+        display="flex"
+        justifyContent="center"
+        width={{ xs: '100%', md: '100%', lg: '80%' }}
+        direction={{ xs: 'column', sm: 'row', md: 'row' }}
+        sx={{ alignItems: 'center' }}
+      >
+        <Grid
+          item
+          xs={6}
+          md={4}
           sx={{
-            width: { xs: '35%', md: '75%', lg: '100%' },
-            height: 'fit-content',
-            marginLeft: '5px',
+            display: 'flex',
+            justifyContent: 'center',
           }}
-        />
-      </Grid>
-      <Grid item xs={12} md={7} lg={9}>
-        <Stack
-          direction="column"
-          spacing={1}
-          sx={{ margin: { xs: '0px 0px', md: '5px 30px', lg: '30px' } }}>
-          <MainInformation userState={userState} />
-          <Description userState={userState} />
-        </Stack>
-      </Grid>
+        >
+          <Avatar
+            alt="GitHub User"
+            src={avatar_url}
+            sx={{
+              width: { xs: 160, md: 200 },
+              height: { xs: 160, md: 200 },
+            }}
+          />
+        </Grid>
+        <Grid item xs={12} md={7} lg={9}>
+          <Stack
+            direction="column"
+            spacing={1}
+            sx={{ margin: '25px', textAlign: 'left' }}
+          >
+            <MainInformation userState={userState} />
+            <Description userState={userState} />
+          </Stack>
+        </Grid>
+      </Stack>
     </Grid>
   );
 };
