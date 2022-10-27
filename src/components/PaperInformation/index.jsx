@@ -1,6 +1,5 @@
-import { Paper, Typography } from '@mui/material';
-import { Stack } from '@mui/system';
 import React from 'react';
+import { Stack, Paper, Typography } from '@mui/material';
 
 const PaperInformation = (props) => {
   const { userState } = props;
@@ -9,11 +8,13 @@ const PaperInformation = (props) => {
   return (
     <Paper
       elevation={3}
-      sx={{ borderRadius: '15px', backgroundColor: '#009688', color: 'white' }}>
+      sx={{ borderRadius: '15px', backgroundColor: '#009688', color: 'white' }}
+    >
       <Stack
         spacing={3}
         direction="row"
-        sx={{ justifyContent: 'space-evenly', margin: '20px' }}>
+        sx={{ justifyContent: 'space-evenly', margin: '20px' }}
+      >
         <Stack>
           <Typography variant="body1">Repos</Typography>
           <Typography variant="h6" sx={{ textAlign: 'center' }}>
