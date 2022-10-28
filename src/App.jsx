@@ -43,11 +43,11 @@ const App = () => {
             boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
             backdropFilter: 'blur(4px)',
             border: '1px solid rgba(255, 255, 255, 0.18)',
-            width: { xs: '100%', md: '80vw' },
-            height: { xs: '100%', md: '80vh', lg: '500px' },
+            width: { xs: '100vw', sm: '90vw', md: '90vw', lg: '100vw' },
+            height: { xs: '100vh', sm: '500px' },
             borderRadius: '16px',
-            marginTop: { xs: '0', md: '30px', lg: '40px' },
-            paddingBottom: { xs: '1rem', sm: '3rem', lg: '0' },
+            margin: { sm: '0 40px' },
+            padding: { xs: '0', sm: '2rem', md: '0', lg: '0' },
           }}
         >
           <Searcher inputUser={inputUser} setInputUser={setInputUser} />

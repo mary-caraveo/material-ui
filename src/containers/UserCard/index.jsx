@@ -20,7 +20,7 @@ const UserCard = (props) => {
       <Stack
         display="flex"
         justifyContent="center"
-        width={{ xs: '100%', md: '100%', lg: '80%' }}
+        width={{ xs: '100%', sm: '90%', md: '90%', lg: '80%' }}
         direction={{ xs: 'column', sm: 'row', md: 'row' }}
         sx={{ alignItems: 'center' }}
       >
