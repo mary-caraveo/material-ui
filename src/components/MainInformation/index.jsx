@@ -20,7 +20,7 @@ const MainInformation = (props) => {
         <Typography variant="h4" sx={{ paddingLeft: '14px' }}>
           {name}
         </Typography>
-        <Typography variant="subtitle2" sx={{ paddingLeft: { sx: '14px' } }}>
+        <Typography variant="subtitle2" sx={{ paddingLeft: { xs: '14px' } }}>
           {new Date(created_at).toLocaleDateString('en-us')}
         </Typography>
       </Stack>
