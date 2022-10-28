@@ -1,0 +1,11 @@
+body {
+  background-color: black;
+  margin: 0;
+}
+
+.App {
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
