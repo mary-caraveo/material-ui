@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from '@mui/material';
+import { Alert, Container, Snackbar } from '@mui/material';
 import { ThemeProvider } from '@mui/material';
 import { getUser } from './services/users';
 import Searcher from './components/Searcher';
@@ -8,14 +8,15 @@ import theme from '../src/theme';
 import './styles/globals.css';
 
 const App = () => {
+  const [openAlert, setOpenAlert] = useState(false);
   const [inputUser, setInputUser] = useState('octocat');
   const [userState, setUserState] = useState('inputUser');
 
   useEffect(() => {
     const fetchUser = async (user) => {
-      const userResponse = await getUser(user);
       try {
-        if (userState === 'octocat') {
+        const userResponse = await getUser(user);
+        if (inputUser === 'octocat') {
           localStorage.setItem('octocat', JSON.stringify(userResponse));
         }
         if (userResponse.message === 'Not found') {
@@ -23,8 +24,10 @@ const App = () => {
           setInputUser(JSON.parse(octocat));
         }
         setUserState(userResponse);
-      } catch (error) {
-        setUserState(userResponse);
+      } catch {
+        const octocat = localStorage.getItem('octocat');
+        octocat && setUserState(JSON.parse(octocat));
+        setOpenAlert(true);
       }
     };
 
@@ -53,6 +56,16 @@ const App = () => {
           <Searcher inputUser={inputUser} setInputUser={setInputUser} />
           <UserCard userState={userState} />
         </Container>
+        <Snackbar
+          open={openAlert}
+          anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+          autoHideDuration={5000}
+          onClose={() => setOpenAlert(false)}
+        >
+          <Alert severity="warning" sx={{ width: '100%' }}>
+            Usuario no encontrado
+          </Alert>
+        </Snackbar>
       </ThemeProvider>
     </div>
   );
