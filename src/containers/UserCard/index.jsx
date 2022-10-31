@@ -14,7 +14,7 @@ const UserCard = (props) => {
       sx={{
         display: 'flex',
         justifyContent: 'center',
-        paddingTop: { xs: '40px', md: '10px', lg: '40px' },
+        paddingTop: { xs: '30px', sm: '35px', lg: '40px' },
       }}
     >
       <Stack

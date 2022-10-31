@@ -52,7 +52,7 @@ const App = () => {
             height: { xs: '100vh', sm: '500px' },
             borderRadius: '16px',
             margin: { sm: '0 40px' },
-            padding: { xs: '0', sm: '2rem', md: '0', lg: '0' },
+            padding: { xs: '0', sm: '1rem', md: '0', lg: '0' },
           }}
         >
           <Searcher inputUser={inputUser} setInputUser={setInputUser} />

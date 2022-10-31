@@ -19,7 +19,7 @@ const Searcher = (props) => {
     <Stack
       direction="row"
       sx={{
-        marginTop: '30px',
+        marginTop: { xs: '45px', sm: '35px', md: '45px' },
         width: '80%',
         backgroundColor: 'white',
         borderRadius: '10px',
