@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Alert, Container, Snackbar } from '@mui/material';
+import { Alert, Container, Snackbar, useMediaQuery } from '@mui/material';
 import { ThemeProvider } from '@mui/material';
 import { getUser } from './services/users';
 import Searcher from './components/Searcher';
@@ -11,6 +11,8 @@ const App = () => {
   const [openAlert, setOpenAlert] = useState(false);
   const [inputUser, setInputUser] = useState('octocat');
   const [userState, setUserState] = useState('inputUser');
+
+  const isMobile = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
 
   useEffect(() => {
     const fetchUser = async (user) => {
@@ -58,7 +60,10 @@ const App = () => {
         </Container>
         <Snackbar
           open={openAlert}
-          anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+          anchorOrigin={{
+            horizontal: isMobile ? 'center' : 'right',
+            vertical: isMobile ? 'bottom' : 'top',
+          }}
           autoHideDuration={5000}
           onClose={() => setOpenAlert(false)}
         >
