@@ -68,7 +68,7 @@ const App = () => {
           onClose={() => setOpenAlert(false)}
         >
           <Alert severity="warning" sx={{ width: '100%' }}>
-            Usuario no encontrado
+            User not found
           </Alert>
         </Snackbar>
       </ThemeProvider>

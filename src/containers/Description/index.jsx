@@ -16,7 +16,7 @@ const Description = (props) => {
           </Typography>
         ) : (
           <Typography variant="body1" sx={{ paddingLeft: '14px' }}>
-            Not Available
+            No information recorded
           </Typography>
         )}
       </Stack>

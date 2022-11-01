@@ -14,14 +14,16 @@ const LocationInformation = (props) => {
       <Grid item xs={12} sm={6} md={6} lg={6}>
         <Stack direction="row" spacing={2}>
           <LocationOnIcon sx={{ color: '#E0144C' }} />
-          <Typography>{location ? location : 'Not Available'}</Typography>
+          <Typography>
+            {location ? location : 'No information recorded'}
+          </Typography>
         </Stack>
       </Grid>
       <Grid item xs={12} sm={6} md={6} lg={6}>
         <Stack direction="row" spacing={2}>
           <TwitterIcon sx={{ color: '#1DA1F2' }} />
           <Typography>
-            {twitter_username ? twitter_username : 'Not Available'}
+            {twitter_username ? twitter_username : 'No information recorded'}
           </Typography>
         </Stack>
       </Grid>
@@ -34,11 +36,12 @@ const LocationInformation = (props) => {
                 target="_blank"
                 rel="noreferrer"
                 underline="hover"
-                href={blog}>
+                href={blog}
+              >
                 {blog}
               </Link>
             ) : (
-              'Not Available'
+              'No information recorded'
             )}
           </Typography>
         </Stack>
@@ -46,7 +49,9 @@ const LocationInformation = (props) => {
       <Grid item xs={12} sm={6} md={6} lg={6}>
         <Stack direction="row" spacing={2}>
           <BusinessIcon sx={{ color: '#939598' }} />
-          <Typography>{company ? company : 'Not Available'}</Typography>
+          <Typography>
+            {company ? company : 'No information recorded'}
+          </Typography>
         </Stack>
       </Grid>
     </Grid>
